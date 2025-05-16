@@ -1,0 +1,181 @@
+/* Global Variables */
+:root {
+    --splash-page-heading: #121f3d;
+}
+
+ion-app {
+    width: 100%;
+    height: 100%;
+}
+
+/* Menu Styling */
+ion-menu ion-header ion-toolbar {
+    --background: var(--splash-page-heading);
+    --color: white;
+}
+
+ion-menu ion-content {
+    --background: var(--splash-page-heading);
+}
+
+ion-menu .logout-button {
+    background-color: white;
+    color: var(--splash-page-heading);
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Header Styling */
+ion-header {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--splash-page-heading);
+    padding: 1rem;
+    background-color: white;
+}
+
+.header-container ion-icon {
+    font-size: 2.2rem;
+    color: var(--splash-page-heading);
+    cursor: pointer;
+}
+
+.header-container h3 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Main Section */
+section {
+    height: calc(100vh - 8rem);
+    width: 100%;
+    background-color: var(--splash-page-heading);
+    overflow-y: auto;
+}
+
+/* Cards Section */
+.cards-container {
+    width: 100%;
+    padding: 1rem;
+}
+
+.cards-container>div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    padding: 1rem;
+    gap: 1rem;
+}
+
+ion-card {
+    padding: 1rem;
+    background-color: whitesmoke;
+    margin: 0;
+}
+
+ion-card:hover {
+    box-shadow: whitesmoke 0px 3px 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+ion-card-header {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+ion-card-header div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+ion-card-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+ion-card-subtitle {
+    font-size: 2rem;
+}
+
+.expenditure {
+    color: red;
+}
+
+.savings {
+    color: green;
+}
+
+ion-card-header div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ion-card-header div:nth-child(2) img {
+    width: 15rem;
+    height: 15rem;
+    object-fit: contain;
+}
+
+/* Chart Container */
+.chart-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+#chartContainer {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .cards-container>div {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #chartContainer {
+        width: 90% !important;
+        height: 400px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .cards-container>div {
+        grid-template-columns: 1fr;
+    }
+
+    ion-card-header {
+        flex-direction: column;
+    }
+
+    #chartContainer {
+        width: 100% !important;
+        height: 350px !important;
+    }
+}

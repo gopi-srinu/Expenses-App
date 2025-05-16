@@ -1,0 +1,65 @@
+<ion-app>
+    <!-- Side menu -->
+    <ion-menu contentId="main-content">
+        <ion-header>
+            <ion-toolbar>
+                <ion-title>MoneyDash</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+            <button class="logout-button">Logout</button>
+        </ion-content>
+    </ion-menu>
+
+    <!-- Main content -->
+    <div class="ion-page" id="main-content">
+        <ion-header>
+            <div class="header-container">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+                <h3>Expenses</h3>
+                <ion-menu-toggle>
+                    <ion-icon name="menu-outline"></ion-icon>
+                </ion-menu-toggle>
+            </div>
+        </ion-header>
+
+        <section>
+            <div class="search-filter-container">
+                <ion-searchbar animated="true" placeholder="Search your Expenditure"></ion-searchbar>
+                <button mat-button [matMenuTriggerFor]="menu">
+                    <i class="fa-solid fa-sliders"></i>
+                </button>
+                <mat-menu #menu="matMenu" class="custom-menu">
+                    <button mat-menu-item class="buttontext">Expenditure</button>
+                    <button mat-menu-item class="buttontext">Saving</button>
+                </mat-menu>
+            </div>
+
+            <article>
+                <div *ngFor="let expense of allexpensesData">
+                    <div class="expense-card">
+                        <div class="image-container">
+                            <img src="/assets/images/Money income-bro.png" alt="Invoice_Image">
+                        </div>
+                        <div class="payment-information">
+                            <h3>{{expense.expense_name}}</h3>
+                            <h6 [ngClass]="{'expenditure-class': expense.expense_category === 'Expenditure', 
+               'saving-class': expense.expense_category === 'Saving'}">
+                                {{expense.expense_category}}
+                            </h6>
+                            <h5
+                                [ngClass]="{'expenditure-class': expense.expense_category === 'Expenditure', 'saving-class': expense.expense_category === 'Saving'}">
+                                <i class="fa-solid fa-indian-rupee-sign"></i>
+                                {{expense.expense_category === 'Expenditure' ? '-' + expense.expense_amount : '+' +
+                                expense.expense_amount}}
+                            </h5>
+                            <p>{{expense.expense_date | date: 'longDate'}}</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <app-shared-footer></app-shared-footer>
+    </div>
+</ion-app>

@@ -1,0 +1,20 @@
+<ion-footer class="ion-no-border">
+  <ion-tab-bar>
+    <ion-tab-button [class.active-tab]="isActive('/home')" (click)="navigateTo('/home')">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+    <ion-tab-button [class.active-tab]="isActive('/progress')" (click)="navigateTo('/progress')">
+      <ion-icon name="trending-up"></ion-icon>
+      <ion-label>Progress</ion-label>
+    </ion-tab-button>
+    <ion-tab-button [class.active-tab]="isActive('/add')" (click)="navigateTo('/add')">
+      <ion-icon name="add-circle"></ion-icon>
+      <ion-label>Add</ion-label>
+    </ion-tab-button>
+    <ion-tab-button [class.active-tab]="isActive('/profile')" (click)="navigateTo('/profile')">
+      <ion-icon name="person"></ion-icon>
+      <ion-label>Profile</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

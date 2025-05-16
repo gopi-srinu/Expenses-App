@@ -1,0 +1,51 @@
+<ion-app>
+    <!-- Side menu -->
+    <ion-menu contentId="main-content">
+        <ion-header>
+            <ion-toolbar>
+                <ion-title>MoneyDash</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+            <button class="logout-button" (click)="logout()">Logout</button>
+        </ion-content>
+    </ion-menu>
+
+    <!-- Main content -->
+    <div class="ion-page" id="main-content">
+        <ion-header>
+            <div class="header-container">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+                <h3>Profile</h3>
+                <ion-buttons>
+                    <ion-menu-button></ion-menu-button>
+                </ion-buttons>
+            </div>
+        </ion-header>
+
+        <section>
+            <article>
+                <div class="profile-image">
+                    <img src="" alt="Profile Image">
+                </div>
+
+                <div class="profile-form">
+                    <ion-list [formGroup]="profileForm">
+                        <ion-input label="Full Name" label-placement="floating" placeholder="Enter your full name"
+                            type="text" fill="solid" formControlName="fullName"></ion-input>
+
+                        <ion-input label="Phone Number" label-placement="floating" placeholder="Enter your phone number"
+                            type="number" fill="solid" formControlName="phoneNumber"></ion-input>
+
+                        <ion-input label="Date" label-placement="floating" type="date" fill="solid"
+                            formControlName="date"></ion-input>
+
+                        <ion-button (click)="updateProfile()">Update Details</ion-button>
+                    </ion-list>
+                </div>
+            </article>
+        </section>
+
+        <app-shared-footer></app-shared-footer>
+    </div>
+</ion-app>

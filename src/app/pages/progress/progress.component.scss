@@ -1,0 +1,183 @@
+/* Global Variables */
+:root {
+  --splash-page-heading: #121f3d;
+}
+
+ion-app {
+  width: 100%;
+  height: 100%;
+}
+
+/* Menu Styling */
+ion-menu ion-header ion-toolbar {
+  --background: var(--splash-page-heading);
+  --color: white;
+}
+
+ion-menu ion-content {
+  --background: var(--splash-page-heading);
+}
+
+ion-menu .logout-button {
+  background-color: white;
+  color: var(--splash-page-heading);
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* Header Styling */
+ion-header {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-container {
+  width: 100%;
+  height: 7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--splash-page-heading);
+  padding: 1rem;
+  background-color: white;
+}
+
+.header-container ion-icon {
+  font-size: 2.2rem;
+  color: var(--splash-page-heading);
+  cursor: pointer;
+}
+
+.header-container h3 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* Main Section */
+section {
+  width: 100%;
+  height: calc(100vh - 8rem);
+  background-color: var(--splash-page-heading);
+  overflow-y: auto;
+}
+
+/* Search and Filter Container */
+.search-filter-container {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ion-searchbar {
+  --background: white;
+  --color: black;
+  --placeholder-color: gray;
+  --icon-color: var(--splash-page-heading);
+  --border-radius: 5px;
+  flex: 1;
+  margin-right: 10px;
+}
+
+.search-filter-container button {
+  background: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.search-filter-container button i {
+  font-size: 1.8rem;
+  color: var(--splash-page-heading);
+}
+
+/* Expense Cards */
+article {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  padding: 1rem;
+  gap: 1rem;
+}
+
+article > div {
+  width: 100%;
+}
+
+.expense-card {
+  width: 100%;
+  color: black;
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.image-container img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: contain;
+}
+
+.payment-information {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.payment-information h3 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.payment-information h5 {
+  margin: 0.5rem 0;
+  font-size: 1.4rem;
+}
+
+.payment-information h6 {
+  margin: 0.3rem 0;
+  font-size: 1.3rem;
+}
+
+.payment-information p {
+  font-size: 1.2rem;
+  color: #777;
+  margin: 0.3rem 0;
+}
+
+.expenditure-class {
+  color: red;
+}
+
+.saving-class {
+  color: green;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  article {
+    grid-template-columns: 1fr;
+  }
+  
+  .expense-card {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .payment-information {
+    align-items: center;
+    text-align: center;
+  }
+}
