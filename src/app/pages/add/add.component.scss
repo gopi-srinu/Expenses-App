@@ -31,7 +31,7 @@ ion-menu .logout-button {
 
 /* Header Styling */
 ion-header {
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
@@ -45,7 +45,8 @@ ion-header {
   background-color: white;
 }
 
-.header-container ion-icon, ion-buttons ion-menu-button {
+.header-container ion-icon,
+ion-buttons ion-menu-button {
   font-size: 2.2rem;
   color: var(--splash-page-heading);
   cursor: pointer;
@@ -121,31 +122,136 @@ ion-select {
   border-radius: 0.4rem;
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  ion-list {
-    width: 80%;
-  }
-}
-
-@media (max-width: 768px) {
-  ion-list {
-    width: 90%;
-    padding: 1.5rem;
-  }
-  
-  ion-input, ion-select {
-    font-size: 1.4rem;
-  }
-}
-
-@media (max-width: 480px) {
-  ion-list {
+@media screen and (max-width:1200px) {
+  section {
     width: 100%;
-    padding: 1rem;
+
+    article {
+      width: 100%;
+
+      ion-list {
+        width: 70%;
+      }
+    }
   }
-  
-  .header-container h3 {
-    font-size: 1.6rem;
+}
+
+@media screen and (max-width:900px) {
+  section {
+    width: 100%;
+
+    article {
+      width: 100%;
+
+      ion-list {
+        width: 80%;
+      }
+    }
   }
+}
+
+@media screen and (max-width:768px) {
+  section {
+    width: 100%;
+
+    article {
+      width: 100%;
+
+      ion-list {
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:650px) {
+  section {
+    width: 100%;
+
+    article {
+      width: 100%;
+
+      ion-list {
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:600px) {
+  section {
+    width: 100%;
+
+    article {
+      width: 100%;
+
+      ion-list {
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:550px) {
+  section {
+    width: 100%;
+
+    article {
+      width: 100%;
+
+      ion-list {
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:500px) {
+  section {
+    width: 100%;
+
+    article {
+      width: 100%;
+
+      ion-list {
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:450px) {
+  section {
+    width: 100%;
+
+    article {
+      width: 100%;
+
+      ion-list {
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:400px) {
+  section {
+    width: 100%;
+
+    article {
+      width: 100%;
+
+      ion-list {
+        width: 90%;
+      }
+    }
+  }
+}
+
+.error_message {
+  color: red;
+  display: flex;
+  align-self: flex-start;
+  padding-left: 1rem;
+  font-size: 1.2rem;
 }

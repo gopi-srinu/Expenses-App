@@ -109,12 +109,13 @@ ion-card-header div:nth-child(1) {
 }
 
 ion-card-title {
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
 ion-card-subtitle {
     font-size: 2rem;
+    align-self: flex-start;
 }
 
 .expenditure {
@@ -123,6 +124,10 @@ ion-card-subtitle {
 
 .savings {
     color: green;
+}
+
+.totalValue {
+    color: #0d1321;
 }
 
 ion-card-header div:nth-child(2) {
@@ -153,29 +158,114 @@ ion-card-header div:nth-child(2) img {
     padding: 1rem;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-    .cards-container>div {
+@media screen and (max-width:1200px) {
+    .cards-container div {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    #chartContainer {
-        width: 90% !important;
-        height: 400px !important;
+        grid-template-rows: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 768px) {
-    .cards-container>div {
-        grid-template-columns: 1fr;
+@media screen and (max-width:900px) {
+    .cards-container div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width:768px) {
+    .cards-container div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
     }
 
-    ion-card-header {
-        flex-direction: column;
+    ion-card {
+        ion-card-header {
+            div {
+                ion-card-title {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:650px) {
+    .cards-container div {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
     }
 
-    #chartContainer {
-        width: 100% !important;
-        height: 350px !important;
+    ion-card {
+        ion-card-header {
+            div {
+                ion-card-title {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:550px) {
+    .cards-container div {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width:500px) {
+    .cards-container div {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width:450px) {
+    .cards-container div {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    ion-card {
+        ion-card-header {
+            div {
+                ion-card-title {
+                    font-size: 1.4rem;
+                }
+
+                ion-card-subtitle {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:400px) {
+    .cards-container div {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    ion-card {
+        ion-card-header {
+            div {
+                ion-card-title {
+                    font-size: 1.4rem;
+                }
+
+                ion-card-subtitle {
+                    font-size: 1.4rem;
+                }
+            }
+        }
     }
 }

@@ -10,12 +10,13 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import Aos from 'aos';
 
 @Component({
   selector: 'app-progress',
   templateUrl: './progress.component.html',
   styleUrls: ['./progress.component.scss'],
-  imports: [IonApp,IonMenuToggle, IonIcon, IonHeader, SharedFooterComponent, CommonModule, MatButtonModule, MatMenuModule, IonSearchbar, FormsModule, ReactiveFormsModule, IonMenu, IonTitle, IonContent, IonToolbar],
+  imports: [IonApp, IonIcon, IonHeader, SharedFooterComponent, CommonModule, MatButtonModule, MatMenuModule, IonSearchbar, FormsModule, ReactiveFormsModule, IonMenu, IonTitle, IonContent, IonToolbar],
 })
 export class ProgressComponent implements OnInit {
 
@@ -34,6 +35,7 @@ export class ProgressComponent implements OnInit {
   }
 
   ngOnInit() {
+    Aos.init();
     this.getExpenses();
   }
 
@@ -50,10 +52,14 @@ export class ProgressComponent implements OnInit {
 
   filterExpenses(value: string) {
     const selectedValue = value?.toLowerCase() || '';
-    this.allexpensesData = this.expensesData.filter((expense) => {
-      const category = expense.expense_category?.toLowerCase() || '';
-      return category.includes(selectedValue);
-    });
+    if (selectedValue !== 'all') {
+      this.allexpensesData = this.expensesData.filter((expense) => {
+        const category = expense.expense_category?.toLowerCase() || '';
+        return category.includes(selectedValue);
+      });
+    } else {
+      this.allexpensesData = this.expensesData;
+    }
   }
 
 

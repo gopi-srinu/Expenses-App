@@ -31,7 +31,7 @@ ion-menu .logout-button {
 
 /* Header Styling */
 ion-header {
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
@@ -99,17 +99,20 @@ ion-searchbar {
 article {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  // grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
   padding: 1rem;
   gap: 1rem;
 }
 
-article > div {
+article>div {
   width: 100%;
 }
 
 .expense-card {
   width: 100%;
+  height: 200px;
   color: black;
   background-color: white;
   padding: 1rem;
@@ -119,12 +122,12 @@ article > div {
   gap: 1.2rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .image-container img {
-  width: 10rem;
-  height: 10rem;
+  width: 15rem;
+  height: 15rem;
   object-fit: contain;
 }
 
@@ -137,22 +140,22 @@ article > div {
 
 .payment-information h3 {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
 .payment-information h5 {
   margin: 0.5rem 0;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .payment-information h6 {
   margin: 0.3rem 0;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
 }
 
 .payment-information p {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   color: #777;
   margin: 0.3rem 0;
 }
@@ -165,19 +168,229 @@ article > div {
   color: green;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  article {
-    grid-template-columns: 1fr;
+@media screen and (max-width:1250px) {
+  section article {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
-  
-  .expense-card {
-    flex-direction: column;
-    align-items: center;
+
+  .payment-information h3 {
+    font-size: 1.8rem;
   }
-  
-  .payment-information {
-    align-items: center;
-    text-align: center;
+
+  .payment-information h6 {
+    font-size: 1.6rem;
+  }
+
+  .payment-information h5 {
+    font-size: 1.5rem;
+  }
+
+  .payment-information p {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width:1024px) {
+  section article {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .image-container img {
+    width: 12rem;
+    height: 12rem;
+    object-fit: contain;
+  }
+
+  .payment-information h3 {
+    font-size: 1.5rem;
+  }
+
+  .payment-information h6 {
+    font-size: 1.2rem;
+  }
+
+  .payment-information h5 {
+    font-size: 1.4rem;
+  }
+
+  .payment-information p {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width:900px) {
+  section article {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .image-container img {
+    width: 12rem;
+    height: 12rem;
+    object-fit: contain;
+  }
+
+
+  .payment-information h3 {
+    font-size: 1.4rem;
+  }
+
+  .payment-information h6 {
+    font-size: 1.2rem;
+  }
+
+  .payment-information h5 {
+    font-size: 1.4rem;
+  }
+
+  .payment-information p {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width:768px) {
+  section article {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .image-container img {
+    width: 12rem;
+    height: 12rem;
+    object-fit: contain;
+  }
+
+  .payment-information h3 {
+    font-size: 1.6rem;
+  }
+
+  .payment-information h6 {
+    font-size: 1.4rem;
+  }
+
+  .payment-information h5 {
+    font-size: 1.4rem;
+  }
+
+  .payment-information p {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width:650px) {
+  section article {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .image-container img {
+    width: 12rem;
+    height: 12rem;
+    object-fit: contain;
+  }
+
+  .payment-information h3 {
+    font-size: 1.6rem;
+  }
+
+  .payment-information h6 {
+    font-size: 1.4rem;
+  }
+
+  .payment-information h5 {
+    font-size: 1.4rem;
+  }
+
+  .payment-information p {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width:600px) {
+  section article {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .image-container img {
+    width: 12rem;
+    height: 12rem;
+    object-fit: contain;
+  }
+
+  .payment-information h3 {
+    font-size: 1.6rem;
+  }
+
+  .payment-information h6 {
+    font-size: 1.4rem;
+  }
+
+  .payment-information h5 {
+    font-size: 1.4rem;
+  }
+
+  .payment-information p {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width:550px) {
+  section article {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .image-container img {
+    width: 12rem;
+    height: 12rem;
+    object-fit: contain;
+  }
+
+  .payment-information h3 {
+    font-size: 1.6rem;
+  }
+
+  .payment-information h6 {
+    font-size: 1.4rem;
+  }
+
+  .payment-information h5 {
+    font-size: 1.4rem;
+  }
+
+  .payment-information p {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width:500px) {
+  section article {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .image-container img {
+    width: 12rem;
+    height: 12rem;
+    object-fit: contain;
+  }
+
+  .payment-information h3 {
+    font-size: 1.6rem;
+  }
+
+  .payment-information h6 {
+    font-size: 1.4rem;
+  }
+
+  .payment-information h5 {
+    font-size: 1.4rem;
+  }
+
+  .payment-information p {
+    font-size: 1.2rem;
   }
 }

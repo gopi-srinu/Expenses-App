@@ -2,18 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   IonHeader,
-  IonIcon, IonInput, IonList, IonButton, IonMenu, IonContent, IonToolbar, IonTitle, IonButtons, IonMenuButton, IonApp } from '@ionic/angular/standalone';
+  IonIcon, IonInput, IonList, IonButton, IonMenu, IonContent, IonToolbar, IonTitle, IonButtons, IonMenuButton, IonApp, IonMenuToggle, IonBackButton} from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { home, trendingUp, addCircle, person, arrowBackOutline, menuOutline } from 'ionicons/icons';
 import { SharedFooterComponent } from '../shared-footer/shared-footer.component';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Notyf } from 'notyf';
+import {MatMenuModule} from '@angular/material/menu';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
-  imports: [IonApp, IonButton, IonList, IonInput, IonHeader, IonIcon, SharedFooterComponent, FormsModule, ReactiveFormsModule, CommonModule, IonMenu, IonTitle, IonButtons, IonMenuButton, IonToolbar, IonContent],
+  imports: [IonApp, IonButton, IonList, IonInput, IonHeader, IonIcon, SharedFooterComponent, FormsModule, ReactiveFormsModule, CommonModule, IonMenu, IonTitle, IonButtons, IonMenuButton, IonToolbar, IonContent, IonMenuToggle, IonBackButton, MatMenuModule],
 })
 export class ProfileComponent implements OnInit {
   profileForm!: FormGroup;

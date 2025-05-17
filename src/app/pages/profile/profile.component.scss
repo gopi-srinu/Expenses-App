@@ -8,27 +8,6 @@ ion-app {
     height: 100%;
 }
 
-/* Menu Styling */
-ion-menu ion-header ion-toolbar {
-    --background: var(--splash-page-heading);
-    --color: white;
-}
-
-ion-menu ion-content {
-    --background: var(--splash-page-heading);
-}
-
-ion-menu .logout-button {
-    background-color: white;
-    color: var(--splash-page-heading);
-    padding: 10px 15px;
-    border-radius: 5px;
-    border: none;
-    font-weight: bold;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
 /* Header Styling */
 ion-header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);

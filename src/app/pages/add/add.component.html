@@ -1,54 +1,44 @@
 <ion-app>
-  <!-- Side menu -->
-  <ion-menu contentId="main-content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>MoneyDash</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content class="ion-padding">
-      <button class="logout-button">Logout</button>
-    </ion-content>
-  </ion-menu>
-  
   <!-- Main content -->
   <div class="ion-page" id="main-content">
     <ion-header>
       <div class="header-container">
         <ion-icon name="arrow-back-outline"></ion-icon>
         <h3>Add Expenses</h3>
-        <ion-buttons>
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>
       </div>
     </ion-header>
-    
+
     <section>
-      <article>
+      <article data-aos="fade-up">
         <ion-list [formGroup]="expenseForm">
           <ion-input label="Name" label-placement="floating" placeholder="Enter the expense name" type="text"
-              fill="solid" formControlName="expense_Name"></ion-input>
+            fill="solid" formControlName="expense_Name"></ion-input>
+          <p *ngIf="expenseForm.get('expense_Name')?.touched && expenseForm.get('expense_Name')?.invalid"
+            class="error_message">Expense Name is required</p>
 
-          <ion-input label="Amount" label-placement="floating" placeholder="Enter the amount" type="number"
-              fill="solid" formControlName="expense_Amount"></ion-input>
+          <ion-input label="Amount" label-placement="floating" placeholder="Enter the amount" type="number" fill="solid"
+            formControlName="expense_Amount"></ion-input>
+          <p *ngIf="expenseForm.get('expense_Amount')?.touched && expenseForm.get('expense_Amount')?.invalid"
+            class="error_message">Expense Amount is required</p>
 
           <ion-input label="Date" label-placement="floating" type="date" fill="solid"
-              formControlName="expense_Date"></ion-input>
-
-          <ion-input label="Invoice" label-placement="floating" type="file" fill="solid"
-              formControlName="expense_Invoice"></ion-input>
+            formControlName="expense_Date"></ion-input>
+          <p *ngIf="expenseForm.get('expense_Date')?.touched && expenseForm.get('expense_Date')?.invalid"
+            class="error_message">Expense Date is required</p>
 
           <ion-select label="Expense Category" label-placement="floating" fill="solid"
-              formControlName="expense_Category">
+            formControlName="expense_Category">
             <ion-select-option value="Saving">Saving</ion-select-option>
             <ion-select-option value="Expenditure">Expenditure</ion-select-option>
           </ion-select>
+          <p *ngIf="expenseForm.get('expense_Category')?.touched && expenseForm.get('expense_Category')?.invalid"
+            class="error_message">Expense Category is required</p>
 
           <ion-button type="button" (click)="submitExpensesForm()">Submit</ion-button>
         </ion-list>
       </article>
     </section>
-    
+
     <app-shared-footer></app-shared-footer>
   </div>
 </ion-app>

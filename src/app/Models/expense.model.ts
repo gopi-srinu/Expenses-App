@@ -3,6 +3,5 @@ export interface Expense {
   expense_name: string;
   expense_amount: number;
   expense_date: string;
-  expense_invoice: string;
   expense_category: string;
 }

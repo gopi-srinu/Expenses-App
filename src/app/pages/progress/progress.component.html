@@ -1,13 +1,13 @@
 <ion-app>
     <!-- Side menu -->
-    <ion-menu contentId="main-content">
+    <ion-menu contentId="main-content" side="end">
         <ion-header>
             <ion-toolbar>
                 <ion-title>MoneyDash</ion-title>
             </ion-toolbar>
         </ion-header>
         <ion-content class="ion-padding">
-            <button class="logout-button">Logout</button>
+            <button class="logout-button" (click)="logout()">Logout</button>
         </ion-content>
     </ion-menu>
 
@@ -17,25 +17,25 @@
             <div class="header-container">
                 <ion-icon name="arrow-back-outline"></ion-icon>
                 <h3>Expenses</h3>
-                <ion-menu-toggle>
-                    <ion-icon name="menu-outline"></ion-icon>
-                </ion-menu-toggle>
             </div>
         </ion-header>
 
         <section>
             <div class="search-filter-container">
-                <ion-searchbar animated="true" placeholder="Search your Expenditure"></ion-searchbar>
+                <ion-searchbar animated="true" placeholder="Search your Expenditure" [(ngModel)]="expenses"
+                    (input)="searchExpenses()"></ion-searchbar>
                 <button mat-button [matMenuTriggerFor]="menu">
                     <i class="fa-solid fa-sliders"></i>
                 </button>
                 <mat-menu #menu="matMenu" class="custom-menu">
-                    <button mat-menu-item class="buttontext">Expenditure</button>
-                    <button mat-menu-item class="buttontext">Saving</button>
+                    <button mat-menu-item class="buttontext" (click)="filterExpenses('All')"><h4>All</h4></button>
+                    <button mat-menu-item class="buttontext"
+                        (click)="filterExpenses('Expenditure')"><h4>Expenditure</h4></button>
+                    <button mat-menu-item class="buttontext" (click)="filterExpenses('Saving')"><h4>Saving</h4></button>
                 </mat-menu>
             </div>
 
-            <article>
+            <article data-aos="fade-up">
                 <div *ngFor="let expense of allexpensesData">
                     <div class="expense-card">
                         <div class="image-container">

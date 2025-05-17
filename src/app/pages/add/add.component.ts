@@ -6,16 +6,18 @@ import { IonIcon, IonButton, IonHeader, IonSelect, IonSelectOption, IonApp } fro
 import { arrowBackOutline } from 'ionicons/icons';
 import { menuOutline } from 'ionicons/icons';
 import { IonList } from "@ionic/angular/standalone";
-import { IonInput, IonMenu, IonTitle, IonButtons, IonMenuButton, IonContent, IonToolbar } from "@ionic/angular/standalone";
+import { IonInput, IonMenu, IonTitle, IonButtons, IonMenuButton, IonContent, IonToolbar, IonMenuToggle } from "@ionic/angular/standalone";
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { SharedFooterComponent } from "../shared-footer/shared-footer.component";
 import { Notyf } from 'notyf';
 import { ExpenseTrackerService } from 'src/app/services/expense-tracker.service';
+import { CommonModule } from '@angular/common';
+import Aos from 'aos';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.scss'],
-  imports: [IonApp, IonHeader, IonButton, IonIcon, IonList, IonInput, ReactiveFormsModule, FormsModule, SharedFooterComponent, IonSelect, IonSelectOption, IonMenu, IonTitle, IonButtons, IonMenuButton, IonContent, IonToolbar, IonApp]
+  imports: [IonApp, IonHeader, IonButton, IonIcon, IonList, IonInput, ReactiveFormsModule, FormsModule, SharedFooterComponent, IonSelect, IonSelectOption, IonApp, CommonModule]
 })
 export class AddComponent implements OnInit {
   expenseForm!: FormGroup;
@@ -34,19 +36,20 @@ export class AddComponent implements OnInit {
       expense_Name: ['', [Validators.required]],
       expense_Amount: [0, [Validators.required]],
       expense_Date: [this.setDate(), [Validators.required]],
-      expense_Invoice: [null],
       expense_Category: ['', [Validators.required]]
     })
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    // this.setDate();
+    Aos.init();
+  }
 
   navigateTo(route: string) {
     this.router.navigateByUrl(route);
   }
 
   submitExpensesForm() {
-    console.log(this.expenseForm.value);
     if (this.expenseForm.valid) {
       const notyf = new Notyf({
         duration: 3000,
@@ -60,6 +63,9 @@ export class AddComponent implements OnInit {
         console.log(addedExpenseResponse);
       })
       this.expenseForm.reset();
+      this.expenseForm.patchValue({
+        expense_Date: this.setDate()
+      });
     }
   }
 

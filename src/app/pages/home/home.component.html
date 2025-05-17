@@ -1,13 +1,13 @@
 <ion-app>
     <!-- Side menu -->
-    <ion-menu contentId="main-content">
+    <ion-menu contentId="main-content" side="end">
         <ion-header>
             <ion-toolbar>
                 <ion-title>MoneyDash</ion-title>
             </ion-toolbar>
         </ion-header>
         <ion-content class="ion-padding">
-            <button class="logout-button">Logout</button>
+            <button class="logout-button" (click)="logout()">Logout</button>
         </ion-content>
     </ion-menu>
 
@@ -17,20 +17,17 @@
             <div class="header-container">
                 <ion-icon name="arrow-back-outline"></ion-icon>
                 <h3>Expenses Dashboard</h3>
-                <ion-menu-toggle>
-                    <ion-icon name="menu-outline"></ion-icon>
-                </ion-menu-toggle>
             </div>
         </ion-header>
 
         <section>
-            <article class="cards-container">
+            <article class="cards-container" data-aos="fade-up">
                 <div>
                     <ion-card>
                         <ion-card-header>
                             <div>
-                                <ion-card-title>Current Income</ion-card-title>
-                                <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+                                <ion-card-title>Total Income</ion-card-title>
+                                <ion-card-subtitle class="totalValue"><i class="fa-solid fa-indian-rupee-sign"></i> {{totalValue}}</ion-card-subtitle>
                             </div>
 
                             <div>
@@ -43,8 +40,8 @@
                         <ion-card-header>
                             <div>
                                 <ion-card-title>Current Expenditure</ion-card-title>
-                                <ion-card-subtitle class="expenditure"><i class="fa-solid fa-minus"></i>
-                                    {{expenditure}}</ion-card-subtitle>
+                                <ion-card-subtitle class="expenditure"><i class="fa-solid fa-minus"></i>&nbsp;
+                                    <i class="fa-solid fa-indian-rupee-sign"></i> {{expenditure}}</ion-card-subtitle>
                             </div>
 
                             <div>
@@ -58,8 +55,8 @@
                         <ion-card-header>
                             <div>
                                 <ion-card-title>Current Savings</ion-card-title>
-                                <ion-card-subtitle class="savings"><i class="fa-solid fa-plus"></i>
-                                    {{savings}}</ion-card-subtitle>
+                                <ion-card-subtitle class="savings"><i class="fa-solid fa-plus"></i>&nbsp;
+                                    <i class="fa-solid fa-indian-rupee-sign"></i> {{savings}}</ion-card-subtitle>
                             </div>
 
                             <div>
@@ -70,7 +67,7 @@
                 </div>
             </article>
 
-            <article class="chart-container">
+            <article class="chart-container" data-aos="fade-up">
                 <div id="chartContainer" style="width: 1000px; height: 450px;"></div>
             </article>
         </section>
